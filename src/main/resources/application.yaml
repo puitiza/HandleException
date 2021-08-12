@@ -1,0 +1,25 @@
+server:
+  error:
+    include-message: always
+    include-binding-errors: always
+    include-stacktrace: on_trace_param
+    include-exception: true
+reflectoring:
+  trace: true
+spring:
+  jpa:
+    show-sql: false
+    generate-ddl: true
+    open-in-view: false
+    hibernate:
+      ddl-auto: create-drop
+  messages:
+    basename: lang/res
+
+# This exception occurs when you try to call an API that doesn't exist in the system. Despite us implementing its handler via
+# To redirect the exception to our advice we need to set a couple of properties in  the properties file:
+#  mvc:
+#    throw-exception-if-no-handler-found: true
+#  web:
+#    resources:
+#      add-mappings: false
